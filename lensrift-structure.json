@@ -1,0 +1,56 @@
+{
+  "project": "LensRift",
+  "theme": "Cinematic Photo & Video Portfolio",
+  "root": "C:\\Uni\\montana",
+  "structure": {
+    "theme.json": {
+      "settings": {
+        "color": {
+          "palette": [
+            { "name": "Base", "slug": "base", "color": "#0a0a0a" },
+            { "name": "Surface", "slug": "surface", "color": "#141414" },
+            { "name": "Contrast", "slug": "contrast", "color": "#e5e4e2" },
+            { "name": "Muted", "slug": "muted", "color": "#a3a3a3" },
+            { "name": "Primary", "slug": "primary", "color": "#c6a87c" },
+            { "name": "Primary deep", "slug": "primary-deep", "color": "#b08d57" },
+            { "name": "Accent", "slug": "accent", "color": "#c6a87c" },
+            { "name": "Dark", "slug": "dark", "color": "#050505" },
+            { "name": "Divider", "slug": "divider", "color": "#262626" }
+          ]
+        },
+        "typography": {
+          "fontFamilies": [
+            { "name": "Playfair Display", "slug": "playfair", "fontFamily": "'Playfair Display', Georgia, serif" },
+            { "name": "Inter", "slug": "inter", "fontFamily": "Inter, system-ui, sans-serif" }
+          ]
+        }
+      }
+    },
+    "patterns/": {
+      "header.php": "Cinematic header with LensRift brand mark, navigation links (#hero, #portfolio, #services, #about, #contact), and Get In Touch CTA.",
+      "hero.php": "Full-screen (100vh) hero section with dark overlay background, bold Playfair 'LENSRIFT' branding, tagline, and Explore CTA button.",
+      "featured-rooms.php": "Dynamic Photography Masonry Grid and wide 16:9 Video Thumbnails with play badges, interactive category filters (All, Cinematic, Commercial, Portrait), and gold hover overlays.",
+      "offers.php": "Clean icon-based Services & Production grid detailing Cinematography, Color Grading, Aerial/Drone, and Commercial Photography capabilities.",
+      "about.php": "Split layout featuring a framed portrait image, director's bio, philosophy, and experience metrics.",
+      "contact.php": "Minimalist project inquiry form (Name, Email, Service Scope, Budget, Details) and direct contact details with social media icons.",
+      "footer.php": "Cinematic dark footer with brand mark and copyright notice.",
+      "page-home.php": "Sequential page layout importing hero -> portfolio -> services -> about -> contact."
+    },
+    "templates/": [
+      "index.html",
+      "front-page.html",
+      "home.html",
+      "page.html",
+      "404.html",
+      "archive.html",
+      "page-no-title.html",
+      "page-with-sidebar.html",
+      "search.html",
+      "single-no-sidebar.html",
+      "single.html"
+    ],
+    "index.html": "Standalone root HTML file containing the complete self-contained preview.",
+    "style.css": "Updated with custom LensRift CSS styles, masonry layout rules, 16:9 aspect ratio containers, gold accents (#C6A87C), typography overrides, and hover transitions.",
+    "assets/js/interactions.js": "Updated with client-side category filtering logic for masonry photography and video items."
+  }
+}

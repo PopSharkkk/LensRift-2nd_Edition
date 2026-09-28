@@ -1,0 +1,79 @@
+{
+  "theme": "LensRift",
+  "name": "LensRift Photo & Video Portfolio",
+  "version": "1.0.0",
+  "description": "High-end cinematic photo and video portfolio restructured from the Montana base template.",
+  "color_palette": {
+    "background_base": "#0A0A0A",
+    "background_surface": "#141414",
+    "primary_text": "#E5E4E2",
+    "muted_text": "#A3A3A3",
+    "accent_gold": "#C6A87C",
+    "divider": "#262626"
+  },
+  "typography": {
+    "headings": "Playfair Display",
+    "body": "Inter / Raleway System"
+  },
+  "structure": [
+    {
+      "section": "Hero Section",
+      "file": "patterns/hero.php",
+      "features": [
+        "Full-screen cinematic overlay",
+        "Minimalist LensRift branding",
+        "Explore CTA"
+      ]
+    },
+    {
+      "section": "Portfolio / Gallery",
+      "file": "patterns/featured-rooms.php",
+      "features": [
+        "Dynamic Photography Masonry Grid",
+        "16:9 Cinematic Video Thumbnails with Play Badges",
+        "Interactive Category Filters (Cinematic, Commercial, Portrait)",
+        "Gold Hover Overlay & Zoom Effects"
+      ]
+    },
+    {
+      "section": "Services / Capabilities",
+      "file": "patterns/offers.php",
+      "features": [
+        "Icon-based cards",
+        "Cinematography, Color Grading, Aerial/Drone & Commercial Photography"
+      ]
+    },
+    {
+      "section": "About / Vision",
+      "file": "patterns/about.php",
+      "features": [
+        "Split layout",
+        "Director's profile picture with framed border",
+        "Professional bio & experience statistics"
+      ]
+    },
+    {
+      "section": "Contact",
+      "file": "patterns/contact.php",
+      "features": [
+        "Minimalist inquiry form",
+        "Project scope & budget selectors",
+        "Subtly styled social media links"
+      ]
+    },
+    {
+      "section": "Header & Footer",
+      "files": [
+        "patterns/header.php",
+        "patterns/footer.php"
+      ],
+      "features": [
+        "LensRift backdrop logo & navigation",
+        "Cinematic dark footer"
+      ]
+    }
+  ],
+  "stylesheet": "style.css",
+  "theme_config": "theme.json",
+  "interactions": "assets/js/interactions.js"
+}

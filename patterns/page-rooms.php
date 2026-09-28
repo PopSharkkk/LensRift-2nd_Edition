@@ -1,0 +1,280 @@
+<?php
+/**
+ * Title: Dedicated Portfolio Page
+ * Slug: montana/page-rooms
+ * Categories: montana-pages
+ * Description: Editorial Minimalist Portfolio Page matching Dennis Wanderlight aesthetic.
+ *
+ * @package Montana
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+<!-- wp:group {"align":"full","className":"ed-subpage-main","layout":{"type":"default"}} -->
+<main class="ed-subpage-main">
+	
+	<!-- EDITORIAL PAGE HERO -->
+	<section class="ed-page-hero">
+		<div class="ed-page-hero-inner">
+			<span class="ed-eyebrow" style="color: #3A86FF;">Selected Works &amp; Archive</span>
+			<h1 class="ed-page-hero-title">Visual Stories, Captured Without Compromise</h1>
+			<p class="ed-page-hero-desc">Explore documentary reels, cinematic commercial projects, and high-altitude stills across Indonesia and abroad. Click any frame to inspect details or stream video.</p>
+			
+			<!-- FILTER PILL TABS -->
+			<div class="ed-filter-bar">
+				<button class="bento-toggle-btn active" data-type="all">All Works</button>
+				<button class="bento-toggle-btn" data-type="video">Motion &amp; Video</button>
+				<button class="bento-toggle-btn" data-type="photo">Still Photography</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- SECTION: CINEMATIC / MOTION (16:9) -->
+	<section class="ed-portfolio-section portfolio-group-video">
+		<div class="ed-portfolio-container">
+			<div class="ed-section-title-wrap">
+				<span class="ed-eyebrow">Motion &amp; Direction</span>
+				<h2 class="ed-section-heading" style="color: #FFFFFF;">Cinematic Video Projects</h2>
+			</div>
+
+			<div class="ed-video-editorial-grid">
+				
+				<div class="ed-video-card portfolio-item" 
+					 data-item-type="video"
+					 data-title="The Silent Ridge" 
+					 data-category="NARRATIVE FILM"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/wide-1.webp' ) ); ?>" 
+					 data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1"
+					 data-description="A short narrative film shot across the volcanic ridges of Bali &amp; Komodo National Park, Indonesia. Captured in native 6K RAW with anamorphic cinema lenses to emphasize environmental scale and atmosphere.">
+					<div class="ed-card-thumb ratio-16-9">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/wide-1.webp' ) ); ?>" alt="Silent Ridge"/>
+						<div class="ed-play-overlay">
+							<span class="ed-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></span>
+						</div>
+					</div>
+					<div class="ed-card-content">
+						<div class="ed-card-meta">
+							<span class="ed-tag">NARRATIVE FILM</span>
+							<span class="ed-tag-secondary">6K RAW</span>
+						</div>
+						<h3 class="ed-card-title">The Silent Ridge</h3>
+						<p class="ed-card-desc">Short Film — Shot in Bali &amp; Komodo, Indonesia</p>
+					</div>
+				</div>
+
+				<div class="ed-video-card portfolio-item" 
+					 data-item-type="video"
+					 data-title="Velocity Motors" 
+					 data-category="COMMERCIAL"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/wide-2.webp' ) ); ?>"
+					 data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1"
+					 data-description="Global launch commercial campaign for Velocity Motors. High-speed pursuit drone capture paired with custom DaVinci Resolve color grading to produce a sleek metallic aesthetic.">
+					<div class="ed-card-thumb ratio-16-9">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/wide-2.webp' ) ); ?>" alt="Velocity Motors"/>
+						<div class="ed-play-overlay">
+							<span class="ed-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></span>
+						</div>
+					</div>
+					<div class="ed-card-content">
+						<div class="ed-card-meta">
+							<span class="ed-tag">COMMERCIAL</span>
+							<span class="ed-tag-secondary">Pursuit Drone</span>
+						</div>
+						<h3 class="ed-card-title">Velocity Motors</h3>
+						<p class="ed-card-desc">Global Brand Commercial Campaign</p>
+					</div>
+				</div>
+
+				<div class="ed-video-card portfolio-item" 
+					 data-item-type="video"
+					 data-title="Archipelago Flight" 
+					 data-category="AERIAL / DRONE"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/wide-3.webp' ) ); ?>"
+					 data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1"
+					 data-description="An aerial documentary exploring coastal island formations across Raja Ampat and Sumba, Indonesia. Filmed with heavy-lifter cinema drones delivering sweeping cinematic vistas.">
+					<div class="ed-card-thumb ratio-16-9">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/wide-3.webp' ) ); ?>" alt="Alpine Horizons"/>
+						<div class="ed-play-overlay">
+							<span class="ed-play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></span>
+						</div>
+					</div>
+					<div class="ed-card-content">
+						<div class="ed-card-meta">
+							<span class="ed-tag">AERIAL / DRONE</span>
+							<span class="ed-tag-secondary">Raja Ampat</span>
+						</div>
+						<h3 class="ed-card-title">Archipelago Flight</h3>
+						<p class="ed-card-desc">6K Aerial Exploration across Indonesia</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- SECTION: STILL PHOTOGRAPHY ARCHIVE -->
+	<section class="ed-portfolio-section portfolio-group-photo">
+		<div class="ed-portfolio-container">
+			<div class="ed-section-title-wrap">
+				<span class="ed-eyebrow">Still Photography</span>
+				<h2 class="ed-section-heading" style="color: #FFFFFF;">Frames from the Journey</h2>
+			</div>
+
+			<div class="ed-photo-editorial-grid">
+				
+				<div class="ed-photo-card portfolio-item" 
+					 data-item-type="photo"
+					 data-title="Glacial Dawn" 
+					 data-category="LANDSCAPE"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rooms-1.webp' ) ); ?>" 
+					 data-description="First sunlight striking the high ridge summits. Shot with medium format camera for ultra-high dynamic range and texture preservation.">
+					<div class="ed-photo-thumb">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/rooms-1.webp' ) ); ?>" alt="Landscape"/>
+					</div>
+					<div class="ed-card-content">
+						<span class="ed-tag">LANDSCAPE</span>
+						<h3 class="ed-card-title">Glacial Dawn</h3>
+						<span class="ed-view-hint">View details &rarr;</span>
+					</div>
+				</div>
+
+				<div class="ed-photo-card portfolio-item" 
+					 data-item-type="photo"
+					 data-title="Rain-Slicked Tokyo" 
+					 data-category="URBAN / NIGHT"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-2.webp' ) ); ?>" 
+					 data-description="Atmospheric rain-slicked streets of Shinjuku. Capturing vibrant neon reflections and dynamic city motion at twilight.">
+					<div class="ed-photo-thumb">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-2.webp' ) ); ?>" alt="Street"/>
+					</div>
+					<div class="ed-card-content">
+						<span class="ed-tag">URBAN / NIGHT</span>
+						<h3 class="ed-card-title">Rain-Slicked Tokyo</h3>
+						<span class="ed-view-hint">View details &rarr;</span>
+					</div>
+				</div>
+
+				<div class="ed-photo-card portfolio-item" 
+					 data-item-type="photo"
+					 data-title="Andean Monolith" 
+					 data-category="TRAVEL"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-3.webp' ) ); ?>" 
+					 data-description="Dramatic lone pinnacle against an overcast South American mountain sky. A study in isolation, scale, and natural forms.">
+					<div class="ed-photo-thumb">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-3.webp' ) ); ?>" alt="Nature"/>
+					</div>
+					<div class="ed-card-content">
+						<span class="ed-tag">TRAVEL</span>
+						<h3 class="ed-card-title">Andean Monolith</h3>
+						<span class="ed-view-hint">View details &rarr;</span>
+					</div>
+				</div>
+
+				<div class="ed-photo-card portfolio-item" 
+					 data-item-type="photo"
+					 data-title="The Navigator" 
+					 data-category="PORTRAIT"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-4.webp' ) ); ?>" 
+					 data-description="Intimate medium format portrait of a local boat captain in Flores, Indonesia. Natural side-lighting emphasizing weathered character.">
+					<div class="ed-photo-thumb">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-4.webp' ) ); ?>" alt="Portrait"/>
+					</div>
+					<div class="ed-card-content">
+						<span class="ed-tag">PORTRAIT</span>
+						<h3 class="ed-card-title">The Navigator</h3>
+						<span class="ed-view-hint">View details &rarr;</span>
+					</div>
+				</div>
+
+				<div class="ed-photo-card portfolio-item" 
+					 data-item-type="photo"
+					 data-title="Aura Watch Precision" 
+					 data-category="COMMERCIAL PRODUCT"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-5.webp' ) ); ?>" 
+					 data-description="Luxury timepiece commercial macro photograph highlighting sapphire crystal reflections and precision dial craftsmanship.">
+					<div class="ed-photo-thumb">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-5.webp' ) ); ?>" alt="Product"/>
+					</div>
+					<div class="ed-card-content">
+						<span class="ed-tag">COMMERCIAL PRODUCT</span>
+						<h3 class="ed-card-title">Aura Watch Precision</h3>
+						<span class="ed-view-hint">View details &rarr;</span>
+					</div>
+				</div>
+
+				<div class="ed-photo-card portfolio-item" 
+					 data-item-type="photo"
+					 data-title="Solitude Timber" 
+					 data-category="DOCUMENTARY"
+					 data-src="<?php echo esc_url( get_theme_file_uri( 'assets/images/about-1.webp' ) ); ?>" 
+					 data-description="Environmental documentary photograph capturing ancient wooden architecture tucked deep in the rainforest highlands of Sumatra, Indonesia.">
+					<div class="ed-photo-thumb">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/about-1.webp' ) ); ?>" alt="Documentary"/>
+					</div>
+					<div class="ed-card-content">
+						<span class="ed-tag">DOCUMENTARY</span>
+						<h3 class="ed-card-title">Solitude Timber</h3>
+						<span class="ed-view-hint">View details &rarr;</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- SECTION: CALL TO ACTION FOOTER (MATCHING WANDERLIGHT EDITORIAL) -->
+	<section id="contact" class="ed-contact-section">
+		<div class="ed-contact-inner">
+			<h2 class="ed-contact-title">Let's Create Together</h2>
+			
+			<div class="ed-contact-grid">
+				<div class="ed-contact-left">
+					<div class="ed-contact-meta">
+						<a href="mailto:info@lensrift.com">info@lensrift.com</a>
+						<a href="tel:+14065550147">+1 (406) 555-0147</a>
+					</div>
+					<div class="ed-contact-photo-card">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/offer-1.webp' ) ); ?>" alt="Hikers on Bridge"/>
+					</div>
+				</div>
+
+				<div class="ed-contact-right">
+					<p class="ed-contact-desc">Have a film or photo commission in mind? Or need custom print licensing? Let's discuss.</p>
+					
+					<form class="ed-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
+						<div class="ed-form-field">
+							<input type="text" placeholder="Your Name" required/>
+						</div>
+						<div class="ed-form-field">
+							<input type="email" placeholder="Your Email" required/>
+						</div>
+						<div class="ed-form-field">
+							<textarea rows="3" placeholder="Tell us about your project..." required></textarea>
+						</div>
+						<button type="submit" class="ed-pill-btn white">
+							<span>Contact Me</span>
+							<span class="ed-btn-dot"></span>
+						</button>
+					</form>
+
+					<div class="ed-footer-meta">
+						<div class="ed-footer-links">
+							<a href="#">Privacy Policy</a>
+							<a href="#">Accessibility Statement</a>
+						</div>
+						<div class="ed-footer-address">
+							<p>Based in Indonesia</p>
+							<p>Jakarta &amp; Bali, ID</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="ed-footer-copy">
+				<p>&copy; 2026 LensRift Studio. Powered &amp; Secured.</p>
+			</div>
+		</div>
+	</section>
+
+</main>
+<!-- /wp:group -->

@@ -1,0 +1,48 @@
+{
+  "project": "LensRift",
+  "style": "Apple-Inspired Bento Box (Modular & Glassmorphic)",
+  "color_palette": {
+    "background_base": "#0A0A0A",
+    "card_surface": "#1A1A1A",
+    "card_border": "rgba(255, 255, 255, 0.08)",
+    "text_primary": "#E5E4E2",
+    "text_muted": "#A3A3A3",
+    "accent_gold": "#C6A87C"
+  },
+  "pages": {
+    "Home": {
+      "url": "index.html",
+      "pattern": "patterns/page-home.php",
+      "bento_modules": [
+        "Cinematic Hero Card (2-col span, dark gradient overlay, CTAs)",
+        "Featured Director Reel Card (1-col span, 16:9 thumbnail, play badge)",
+        "Mini Photo Gallery Card (4-grid image preview)",
+        "About Creator Card ('Based in Indonesia' pulse badge & stats)"
+      ]
+    },
+    "Portfolio": {
+      "url": "portfolio.html",
+      "pattern": "patterns/page-rooms.php",
+      "features": [
+        "Interactive Filter Toggle Buttons (All, Video, Photo)",
+        "Wide 16:9 Aspect Ratio Video Cards with play badges",
+        "Photography Masonry Grid with dark glass hover overlays"
+      ]
+    },
+    "About Me": {
+      "url": "about.html",
+      "pattern": "patterns/page-about.php",
+      "features": [
+        "Creator Profile Card with 'Based in Indonesia' location indicator",
+        "Vision & Philosophy Statement",
+        "Capabilities & Services List (Cinematography, Color Grading, Aerial)",
+        "Sleek Modular Inquiry Form & Social Media Buttons"
+      ]
+    }
+  },
+  "components": {
+    "header": "patterns/header.php (Apple-style floating glassmorphic bar)",
+    "stylesheet": "style.css",
+    "filter_script": "assets/js/interactions.js"
+  }
+}

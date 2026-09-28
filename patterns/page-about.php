@@ -1,0 +1,170 @@
+<?php
+/**
+ * Title: Dedicated About Me Page
+ * Slug: montana/page-about
+ * Categories: montana-pages
+ * Description: Editorial Minimalist About Me Page matching Dennis Wanderlight aesthetic.
+ *
+ * @package Montana
+ */
+
+defined( 'ABSPATH' ) || exit;
+?>
+<!-- wp:group {"align":"full","className":"ed-subpage-main","layout":{"type":"default"}} -->
+<main class="ed-subpage-main">
+	
+	<!-- ABOUT HERO / PROFILE INTRO -->
+	<section class="ed-about-hero-section">
+		<div class="ed-about-hero-grid">
+			<div class="ed-about-hero-text">
+				<span class="ed-eyebrow" style="color: #3A86FF;">Visual Director &amp; Cinematographer</span>
+				<h1 class="ed-about-hero-title">Julian Vane</h1>
+				<p class="ed-about-lead">Operating across the Indonesian archipelago and internationally — capturing authentic human emotion and raw landscape presence through the camera lens.</p>
+				
+				<div class="ed-about-location-pill">
+					<span class="ed-btn-dot" style="background: #3A86FF;"></span>
+					<span>Based in Jakarta &amp; Bali, Indonesia</span>
+				</div>
+			</div>
+
+			<div class="ed-about-hero-portrait">
+				<div class="ed-portrait-wrapper">
+					<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/about-2.webp' ) ); ?>" alt="Julian Vane in field with camera"/>
+					<div class="ed-portrait-caption">
+						<span>Field Production &bull; Mount Bromo, ID</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PHILOSOPHY / ESSAY SECTION (MATCHING HOME VIGNETTES/STORY PALETTE) -->
+	<section class="ed-vignettes-section" style="background: #DCE5F2; color: #111111;">
+		<div class="ed-vignettes-grid">
+			<div class="ed-vignettes-photos">
+				<div class="ed-photo-item ed-photo-main">
+					<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/about-1.webp' ) ); ?>" alt="Rainforest Highlands of Sumatra"/>
+					<span class="ed-photo-caption">Highland Solitude &bull; Sumatra</span>
+				</div>
+				<div class="ed-photo-item ed-photo-tall">
+					<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/gallery-1.webp' ) ); ?>" alt="Urban Streetscape Intersection"/>
+					<span class="ed-photo-caption">Street Geometry</span>
+				</div>
+			</div>
+
+			<div class="ed-vignettes-text-col">
+				<span class="ed-eyebrow">The Philosophy of Craft</span>
+				<h2 class="ed-section-heading">Intentional Lighting &amp; Organic Textures</h2>
+				<p style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333333; margin-top: 1.5rem;">
+					LensRift was founded on a simple premise: beauty doesn't require staging. Operating from Indonesia, we blend rich equatorial color contrasts with subtle, filmic grading. Every project is crafted with deliberate pacing, tactile sound design, and an unwavering respect for the story unfolding in front of the lens.
+				</p>
+				
+				<div class="ed-stats-block" style="margin-top: 2.5rem; display: flex; gap: 2rem; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem;">
+					<div>
+						<strong style="font-size: 2rem; font-weight: 700; color: #111111; display: block;">100%</strong>
+						<span style="font-size: 0.85rem; color: #555555;">Native 6K/8K RAW</span>
+					</div>
+					<div>
+						<strong style="font-size: 2rem; font-weight: 700; color: #111111; display: block;">APDI / FAA</strong>
+						<span style="font-size: 0.85rem; color: #555555;">Certified Drone Pilots</span>
+					</div>
+					<div>
+						<strong style="font-size: 2rem; font-weight: 700; color: #111111; display: block;">Global</strong>
+						<span style="font-size: 0.85rem; color: #555555;">Turnkey Remote Delivery</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- SERVICES & CAPABILITIES SECTION (EDITORIAL LIGHT/YELLOW TONE) -->
+	<section class="ed-philosophy-section" style="background: #FDF9D2; color: #111111; padding-bottom: 7rem;">
+		<div class="ed-philosophy-content">
+			<span class="ed-eyebrow">What We Do</span>
+			<h2 class="ed-philosophy-heading">End-to-End Visual Production &amp; Post-Production Services</h2>
+		</div>
+
+		<div class="ed-services-editorial-grid">
+			<div class="ed-service-editorial-card">
+				<span class="ed-service-num">01</span>
+				<h3 class="ed-service-title">Cinematography &amp; Direction</h3>
+				<p class="ed-service-desc">Documentary filmmaking, commercial brand campaigns, short films, and high-production music videos captured on cinema-grade digital cameras.</p>
+			</div>
+
+			<div class="ed-service-editorial-card">
+				<span class="ed-service-num">02</span>
+				<h3 class="ed-service-title">Color Grading &amp; Finishing</h3>
+				<p class="ed-service-desc">Full DaVinci Resolve color science workflow. Custom print film emulations (35mm / 16mm grain), HDR10 mastering, and color-accurate delivery.</p>
+			</div>
+
+			<div class="ed-service-editorial-card">
+				<span class="ed-service-num">03</span>
+				<h3 class="ed-service-title">Aerial &amp; Pursuit Drone</h3>
+				<p class="ed-service-desc">High-speed acrobatic FPV chase drone operations and heavy-lifter rigs equipped with cinema prime lenses for difficult remote terrain.</p>
+			</div>
+
+			<div class="ed-service-editorial-card">
+				<span class="ed-service-num">04</span>
+				<h3 class="ed-service-title">Commercial Photography</h3>
+				<p class="ed-service-desc">Medium format editorial assignments, hospitality architecture, high-end travel campaigns, and limited-edition fine art museum prints.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- LET'S CREATE TOGETHER / CONTACT SECTION -->
+	<section id="contact" class="ed-contact-section">
+		<div class="ed-contact-inner">
+			<h2 class="ed-contact-title">Let's Create Together</h2>
+			
+			<div class="ed-contact-grid">
+				<div class="ed-contact-left">
+					<div class="ed-contact-meta">
+						<a href="mailto:info@lensrift.com">info@lensrift.com</a>
+						<a href="tel:+14065550147">+1 (406) 555-0147</a>
+					</div>
+					<div class="ed-contact-photo-card">
+						<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/offer-1.webp' ) ); ?>" alt="Hikers on Bridge"/>
+					</div>
+				</div>
+
+				<div class="ed-contact-right">
+					<p class="ed-contact-desc">Ready to discuss your next production, expedition, or commercial reel? Let's connect.</p>
+					
+					<form class="ed-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Inquiry sent! Julian will get back to you shortly.');">
+						<div class="ed-form-field">
+							<input type="text" placeholder="Your Name" required/>
+						</div>
+						<div class="ed-form-field">
+							<input type="email" placeholder="Your Email" required/>
+						</div>
+						<div class="ed-form-field">
+							<textarea rows="3" placeholder="Tell us about your project, timeline, and location..." required></textarea>
+						</div>
+						<button type="submit" class="ed-pill-btn white">
+							<span>Send Message</span>
+							<span class="ed-btn-dot"></span>
+						</button>
+					</form>
+
+					<div class="ed-footer-meta">
+						<div class="ed-footer-links">
+							<a href="#">Instagram &rarr;</a>
+							<a href="#">Vimeo &rarr;</a>
+							<a href="#">YouTube &rarr;</a>
+						</div>
+						<div class="ed-footer-address">
+							<p>Studio: Jakarta &amp; Bali, ID</p>
+							<p>Available worldwide for commissions</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="ed-footer-copy">
+				<p>&copy; 2026 LensRift Studio. Powered &amp; Secured.</p>
+			</div>
+		</div>
+	</section>
+
+</main>
+<!-- /wp:group -->
