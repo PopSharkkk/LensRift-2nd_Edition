@@ -1,189 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>About — LensRift</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — LensRift</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="background: #0B132B; color: #FFFFFF; font-family: 'Poppins', sans-serif;">
+<body>
+  <nav class="nav nav-dark">
+    <div class="nav-container">
+      <a href="./index.html" class="nav-logo">LensRift</a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./portfolio.html">Portfolio</a>
+        <a href="./about.html" class="active">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav-mobile-overlay">
+    <a href="./index.html">Home</a>
+    <a href="./portfolio.html">Portfolio</a>
+    <a href="./about.html">About</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-	<!-- EDITORIAL HEADER -->
-	<header class="ed-header">
-		<div class="ed-header-inner">
-			<a href="index.html" class="ed-brand">
-				<span class="ed-brand-box">LensRift<span class="ed-brand-dot"></span></span>
-			</a>
+  <div class="page-content">
+    <section class="hero hero-dark hero-compact">
+      <div class="hero-content profile-hero-content">
+        <img src="assets/images/about-2.webp" alt="Julian Vane" class="profile-avatar-img">
+        <div>
+          <p class="label" style="color: var(--text-light-secondary); margin-bottom: 10px;">Visual Director &amp; Cinematographer</p>
+          <h1 class="headline-1 hero-title">Julian Vane</h1>
+          <p class="subheadline" style="color: var(--text-light-secondary);">Operating across the Indonesian archipelago and internationally.</p>
+        </div>
+      </div>
+    </section>
 
-			<nav class="ed-nav">
-				<a href="index.html" class="ed-nav-link">Home</a>
-				<a href="portfolio.html" class="ed-nav-link">Portfolio &darr;</a>
-				<a href="about.html" class="ed-nav-link active">About</a>
-				<a href="#contact" class="ed-nav-link">Contact</a>
-			</nav>
-		</div>
-	</header>
+    <section class="section bg-black">
+      <div class="container">
+        <div class="split-feature">
+          <div>
+            <p class="label" style="color: var(--text-light-secondary); margin-bottom: 12px;">Philosophy of Craft</p>
+            <h2 class="headline-2" style="color: var(--text-light); margin-bottom: 20px;">Intentional Lighting &amp; Organic Textures</h2>
+            <p class="body-large" style="color: var(--text-light-secondary); margin-bottom: 18px;">
+              Beauty doesn't require staging. We blend rich equatorial color with subtle filmic grading — deliberate pacing, tactile sound, respect for the story.
+            </p>
+            <div class="skills-grid" style="margin-top: 20px;">
+              <span class="skill-tag">6K / 8K RAW</span>
+              <span class="skill-tag">Certified Drone Pilots</span>
+              <span class="skill-tag">Remote Delivery</span>
+            </div>
+          </div>
+          <div class="split-feature-img"><img src="assets/images/about-1.webp" alt="Highlands"></div>
+        </div>
+      </div>
+    </section>
 
-	<main class="ed-subpage-main">
-		
-		<!-- ABOUT HERO / PROFILE INTRO -->
-		<section class="ed-about-hero-section">
-			<div class="ed-about-hero-grid">
-				<div class="ed-about-hero-text">
-					<span class="ed-eyebrow" style="color: #3A86FF;">Visual Director &amp; Cinematographer</span>
-					<h1 class="ed-about-hero-title">Julian Vane</h1>
-					<p class="ed-about-lead">Operating across the Indonesian archipelago and internationally — capturing authentic human emotion and raw landscape presence through the camera lens.</p>
-					
-					<div class="ed-about-location-pill">
-						<span class="ed-btn-dot" style="background: #3A86FF;"></span>
-						<span>Based in Jakarta &amp; Bali, Indonesia</span>
-					</div>
-				</div>
+    <section class="section-compact bg-dark">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-item"><div class="stat-number" style="color: var(--text-light);" data-count="120" data-suffix="+">120+</div><p class="stat-label">Projects Delivered</p></div>
+          <div class="stat-item"><div class="stat-number" style="color: var(--text-light);" data-count="14">14</div><p class="stat-label">Islands Covered</p></div>
+          <div class="stat-item"><div class="stat-number" style="color: var(--text-light);" data-count="8">8</div><p class="stat-label">Years in Field</p></div>
+          <div class="stat-item"><div class="stat-number" style="color: var(--text-light);" data-count="6">6</div><p class="stat-label">Intl. Features</p></div>
+        </div>
+      </div>
+    </section>
 
-				<div class="ed-about-hero-portrait">
-					<div class="ed-portrait-wrapper">
-						<img src="assets/images/about-2.webp" alt="Julian Vane in field with camera"/>
-						<div class="ed-portrait-caption">
-							<span>Field Production &bull; Mount Bromo, ID</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="section bg-black">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="label" style="color: var(--text-light-secondary);">What We Do</p>
+          <h2 class="headline-2" style="color: var(--text-light);">End-to-End Production Services</h2>
+        </div>
+        <div class="card-grid card-grid-2">
+          <div class="card card-dark"><div class="card-body"><p class="label card-label" style="color: var(--accent);">01</p><h3 class="card-title" style="color: var(--text-light);">Cinematography &amp; Direction</h3><p class="card-desc">Documentary, commercials, short films, music videos on cinema-grade cameras.</p></div></div>
+          <div class="card card-dark"><div class="card-body"><p class="label card-label" style="color: var(--accent);">02</p><h3 class="card-title" style="color: var(--text-light);">Color Grading &amp; Finishing</h3><p class="card-desc">DaVinci Resolve workflow, 35mm / 16mm emulation, HDR10 mastering.</p></div></div>
+          <div class="card card-dark"><div class="card-body"><p class="label card-label" style="color: var(--accent);">03</p><h3 class="card-title" style="color: var(--text-light);">Aerial &amp; Pursuit Drone</h3><p class="card-desc">FPV chase and heavy-lifter cinema rigs for remote terrain.</p></div></div>
+          <div class="card card-dark"><div class="card-body"><p class="label card-label" style="color: var(--accent);">04</p><h3 class="card-title" style="color: var(--text-light);">Commercial Photography</h3><p class="card-desc">Editorial, hospitality, travel campaigns, fine-art prints.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-		<!-- PHILOSOPHY / ESSAY SECTION (MATCHING HOME VIGNETTES/STORY PALETTE) -->
-		<section class="ed-vignettes-section" style="background: #DCE5F2; color: #111111;">
-			<div class="ed-vignettes-grid">
-				<div class="ed-vignettes-photos">
-					<div class="ed-photo-item ed-photo-main">
-						<img src="assets/images/about-1.webp" alt="Rainforest Highlands of Sumatra"/>
-						<span class="ed-photo-caption">Highland Solitude &bull; Sumatra</span>
-					</div>
-					<div class="ed-photo-item ed-photo-tall">
-						<img src="assets/images/gallery-1.webp" alt="Urban Streetscape Intersection"/>
-						<span class="ed-photo-caption">Street Geometry</span>
-					</div>
-				</div>
+    <section class="section bg-dark">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="label" style="color: var(--text-light-secondary);">Gallery</p>
+          <h2 class="headline-2" style="color: var(--text-light);">Field Frames</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Street Geometry" data-category="Street" data-src="assets/images/gallery-1.webp" data-description="Urban intersection study."><img src="assets/images/gallery-1.webp" alt="Street"></div>
+          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Neon Pulse" data-category="Urban Night" data-src="assets/images/gallery-2.webp" data-description="Shinjuku at twilight."><img src="assets/images/gallery-2.webp" alt="Neon"></div>
+          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Monolith" data-category="Travel" data-src="assets/images/gallery-3.webp" data-description="High-altitude solitude."><img src="assets/images/gallery-3.webp" alt="Monolith"></div>
+        </div>
+      </div>
+    </section>
 
-				<div class="ed-vignettes-text-col">
-					<span class="ed-eyebrow">The Philosophy of Craft</span>
-					<h2 class="ed-section-heading">Intentional Lighting &amp; Organic Textures</h2>
-					<p style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; line-height: 1.7; color: #333333; margin-top: 1.5rem;">
-						LensRift was founded on a simple premise: beauty doesn't require staging. Operating from Indonesia, we blend rich equatorial color contrasts with subtle, filmic grading. Every project is crafted with deliberate pacing, tactile sound design, and an unwavering respect for the story unfolding in front of the lens.
-					</p>
-					
-					<div class="ed-stats-block" style="margin-top: 2.5rem; display: flex; gap: 2rem; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 1.5rem;">
-						<div>
-							<strong style="font-size: 2rem; font-weight: 700; color: #111111; display: block;">100%</strong>
-							<span style="font-size: 0.85rem; color: #555555;">Native 6K/8K RAW</span>
-						</div>
-						<div>
-							<strong style="font-size: 2rem; font-weight: 700; color: #111111; display: block;">APDI / FAA</strong>
-							<span style="font-size: 0.85rem; color: #555555;">Certified Drone Pilots</span>
-						</div>
-						<div>
-							<strong style="font-size: 2rem; font-weight: 700; color: #111111; display: block;">Global</strong>
-							<span style="font-size: 0.85rem; color: #555555;">Turnkey Remote Delivery</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="section bg-black text-center" id="contact">
+      <div class="container">
+        <p class="label" style="color: var(--text-light-secondary); margin-bottom: 12px;">Contact</p>
+        <h2 class="headline-2" style="color: var(--text-light); margin-bottom: 16px;">Let's Create Together</h2>
+        <p class="subheadline" style="max-width: 520px; margin: 0 auto 32px;">Ready to discuss your next production or expedition?</p>
+        <div class="hero-cta"><a href="mailto:info@lensrift.com" class="btn btn-primary">info@lensrift.com</a><a href="./portfolio.html" class="btn btn-secondary">View Portfolio</a></div>
+      </div>
+    </section>
 
-		<!-- SERVICES & CAPABILITIES SECTION (EDITORIAL LIGHT/YELLOW TONE) -->
-		<section class="ed-philosophy-section" style="background: #FDF9D2; color: #111111; padding-bottom: 7rem;">
-			<div class="ed-philosophy-content">
-				<span class="ed-eyebrow">What We Do</span>
-				<h2 class="ed-philosophy-heading">End-to-End Visual Production &amp; Post-Production Services</h2>
-			</div>
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">&copy; 2026 LensRift Studio. All rights reserved.</p>
+        <div class="footer-links"><a href="./index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./about.html">About</a></div>
+      </div>
+    </footer>
+  </div>
 
-			<div class="ed-services-editorial-grid">
-				<div class="ed-service-editorial-card">
-					<span class="ed-service-num">01</span>
-					<h3 class="ed-service-title">Cinematography &amp; Direction</h3>
-					<p class="ed-service-desc">Documentary filmmaking, commercial brand campaigns, short films, and high-production music videos captured on cinema-grade digital cameras.</p>
-				</div>
+  <div id="portfolio-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <button id="bento-modal-close" class="modal-close">&times;</button>
+      <div class="modal-media">
+        <img id="bento-modal-img" src="" alt="Detail View">
+        <div id="bento-modal-video-container" class="modal-video" style="display:none;">
+          <iframe id="bento-modal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="modal-info"><p class="label" id="bento-modal-cat" style="color: var(--accent);"></p><h2 id="bento-modal-title"></h2><p id="bento-modal-desc"></p></div>
+    </div>
+  </div>
 
-				<div class="ed-service-editorial-card">
-					<span class="ed-service-num">02</span>
-					<h3 class="ed-service-title">Color Grading &amp; Finishing</h3>
-					<p class="ed-service-desc">Full DaVinci Resolve color science workflow. Custom print film emulations (35mm / 16mm grain), HDR10 mastering, and color-accurate delivery.</p>
-				</div>
-
-				<div class="ed-service-editorial-card">
-					<span class="ed-service-num">03</span>
-					<h3 class="ed-service-title">Aerial &amp; Pursuit Drone</h3>
-					<p class="ed-service-desc">High-speed acrobatic FPV chase drone operations and heavy-lifter rigs equipped with cinema prime lenses for difficult remote terrain.</p>
-				</div>
-
-				<div class="ed-service-editorial-card">
-					<span class="ed-service-num">04</span>
-					<h3 class="ed-service-title">Commercial Photography</h3>
-					<p class="ed-service-desc">Medium format editorial assignments, hospitality architecture, high-end travel campaigns, and limited-edition fine art museum prints.</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- LET'S CREATE TOGETHER / CONTACT SECTION -->
-		<section id="contact" class="ed-contact-section">
-			<div class="ed-contact-inner">
-				<h2 class="ed-contact-title">Let's Create Together</h2>
-				
-				<div class="ed-contact-grid">
-					<div class="ed-contact-left">
-						<div class="ed-contact-meta">
-							<a href="mailto:info@lensrift.com">info@lensrift.com</a>
-							<a href="tel:+14065550147">+1 (406) 555-0147</a>
-						</div>
-						<div class="ed-contact-photo-card">
-							<img src="assets/images/offer-1.webp" alt="Hikers on Bridge"/>
-						</div>
-					</div>
-
-					<div class="ed-contact-right">
-						<p class="ed-contact-desc">Ready to discuss your next production, expedition, or commercial reel? Let's connect.</p>
-						
-						<form class="ed-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Inquiry sent! Julian will get back to you shortly.');">
-							<div class="ed-form-field">
-								<input type="text" placeholder="Your Name" required/>
-							</div>
-							<div class="ed-form-field">
-								<input type="email" placeholder="Your Email" required/>
-							</div>
-							<div class="ed-form-field">
-								<textarea rows="3" placeholder="Tell us about your project, timeline, and location..." required></textarea>
-							</div>
-							<button type="submit" class="ed-pill-btn white">
-								<span>Send Message</span>
-								<span class="ed-btn-dot"></span>
-							</button>
-						</form>
-
-						<div class="ed-footer-meta">
-							<div class="ed-footer-links">
-								<a href="#">Instagram &rarr;</a>
-								<a href="#">Vimeo &rarr;</a>
-								<a href="#">YouTube &rarr;</a>
-							</div>
-							<div class="ed-footer-address">
-								<p>Studio: Jakarta &amp; Bali, ID</p>
-								<p>Available worldwide for commissions</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="ed-footer-copy">
-					<p>&copy; 2026 LensRift Studio. Powered &amp; Secured.</p>
-				</div>
-			</div>
-		</section>
-
-	</main>
-
-	<script src="assets/js/interactions.js"></script>
+  <script src="assets/js/interactions.js"></script>
 </body>
 </html>
