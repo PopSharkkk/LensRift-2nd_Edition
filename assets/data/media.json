@@ -1,0 +1,81 @@
+{
+  "photos": [
+    {
+      "id": "photo-tokyo-neon",
+      "title": "Tokyo's Neon Pulse",
+      "category": "Urban & Night",
+      "description": "Rain-slicked Shinjuku streets, neon reflections at twilight.",
+      "src": "assets/images/gallery-2.webp",
+      "is_featured": true,
+      "sort_order": 1
+    },
+    {
+      "id": "photo-andean-peaks",
+      "title": "Echoes of the Andean Peaks",
+      "category": "Landscape",
+      "description": "Weathered monoliths above high-altitude desert plains.",
+      "src": "assets/images/gallery-3.webp",
+      "is_featured": false,
+      "sort_order": 2
+    },
+    {
+      "id": "photo-alpine-lake",
+      "title": "Alpine Reflection Lake",
+      "category": "Documentary",
+      "description": "Quiet glacial waters in the Sumatran highlands.",
+      "src": "assets/images/about-1.webp",
+      "is_featured": false,
+      "sort_order": 3
+    },
+    {
+      "id": "photo-street-geo",
+      "title": "Street Geometry",
+      "category": "Street",
+      "description": "Urban intersection study.",
+      "src": "assets/images/gallery-1.webp",
+      "is_featured": false,
+      "sort_order": 4
+    },
+    {
+      "id": "photo-navigator",
+      "title": "The Navigator",
+      "category": "Portrait",
+      "description": "Boat captain in Flores, natural side-light.",
+      "src": "assets/images/gallery-4.webp",
+      "is_featured": false,
+      "sort_order": 5
+    }
+  ],
+  "videos": [
+    {
+      "id": "video-silent-ridge",
+      "title": "The Silent Ridge",
+      "category": "Narrative Film",
+      "description": "Short film across Bali & Komodo. 6K RAW, anamorphic.",
+      "src": "assets/images/wide-1.webp",
+      "video_url": "https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1",
+      "is_featured": false,
+      "sort_order": 1
+    },
+    {
+      "id": "video-velocity",
+      "title": "Velocity Motors",
+      "category": "Commercial",
+      "description": "Brand campaign, pursuit drone + metallic grade.",
+      "src": "assets/images/wide-2.webp",
+      "video_url": "https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1",
+      "is_featured": false,
+      "sort_order": 2
+    },
+    {
+      "id": "video-archipelago",
+      "title": "Archipelago Flight",
+      "category": "Aerial / Drone",
+      "description": "Aerial documentary across Raja Ampat and Sumba.",
+      "src": "assets/images/wide-3.webp",
+      "video_url": "https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1",
+      "is_featured": false,
+      "sort_order": 3
+    }
+  ]
+}

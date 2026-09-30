@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // Portfolio modal
+  // Portfolio modal (event delegation — works for DB-injected cards too)
   const modal = document.getElementById('portfolio-modal');
   const mClose = document.getElementById('bento-modal-close');
   const mImg = document.getElementById('bento-modal-img');
@@ -93,30 +93,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const mTitle = document.getElementById('bento-modal-title');
   const mCat = document.getElementById('bento-modal-cat');
   const mDesc = document.getElementById('bento-modal-desc');
-  const items = document.querySelectorAll('.portfolio-item');
   function closeModal() {
     if (!modal) return;
     modal.classList.remove('is-open');
     document.body.style.overflow = '';
     if (mFrame) mFrame.src = '';
   }
-  if (modal && items.length) {
-    items.forEach(item => item.addEventListener('click', () => {
-      const type = item.dataset.itemType;
-      mTitle.textContent = item.dataset.title || '';
-      mCat.textContent = item.dataset.category || '';
-      mDesc.textContent = item.dataset.description || '';
-      if (type === 'video') {
-        mImg.style.display = 'none'; mVidWrap.style.display = 'block';
-        mFrame.src = item.dataset.videoUrl || '';
-      } else {
-        mVidWrap.style.display = 'none'; mImg.style.display = 'block';
-        mImg.src = item.dataset.src || '';
-        if (mFrame) mFrame.src = '';
-      }
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }));
+  function openItem(item) {
+    const type = item.dataset.itemType;
+    mTitle.textContent = item.dataset.title || '';
+    mCat.textContent = item.dataset.category || '';
+    mDesc.textContent = item.dataset.description || '';
+    if (type === 'video') {
+      mImg.style.display = 'none'; mVidWrap.style.display = 'block';
+      mFrame.src = item.dataset.videoUrl || '';
+    } else {
+      mVidWrap.style.display = 'none'; mImg.style.display = 'block';
+      mImg.src = item.dataset.src || '';
+      if (mFrame) mFrame.src = '';
+    }
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  if (modal) {
+    document.addEventListener('click', (e) => {
+      const item = e.target.closest ? e.target.closest('.portfolio-item') : null;
+      if (item) openItem(item);
+    });
     if (mClose) mClose.addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
