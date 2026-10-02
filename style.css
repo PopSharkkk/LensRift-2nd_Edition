@@ -583,6 +583,13 @@ body.has-hero .nav.menu-open .nav-hamburger span { background: var(--ink); }
   .nav { background: var(--canvas); backdrop-filter: none; -webkit-backdrop-filter: none; }
   body.has-hero .nav { background: var(--canvas); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .nav.scrolled { background: var(--canvas); }
+  /* Solid bar here means ink text — never leave the white over-photo palette on */
+  body.has-hero .nav:not(.scrolled):not(.menu-open) .nav-logo { color: var(--ink); }
+  body.has-hero .nav:not(.scrolled):not(.menu-open) .nav-links a { color: var(--ink-2); }
+  body.has-hero .nav:not(.scrolled):not(.menu-open) .nav-links a:hover,
+  body.has-hero .nav:not(.scrolled):not(.menu-open) .nav-links a.active { color: var(--ink); }
+  body.has-hero .nav:not(.scrolled):not(.menu-open) .nav-cta { background: var(--ink); color: #fff; }
+  body.has-hero .nav:not(.scrolled):not(.menu-open) .nav-hamburger span { background: var(--ink); }
   .nav-mobile-overlay { background: var(--canvas); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .modal-backdrop { background: rgba(26, 21, 14, 0.82); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .hero-bg::after { background: rgba(24, 20, 14, 0.72); }
