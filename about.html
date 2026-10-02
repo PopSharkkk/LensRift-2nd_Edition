@@ -4,29 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — LensRift</title>
+  <meta name="description" content="Julian Vane — visual director and cinematographer operating across the Indonesian archipelago and internationally.">
+  <meta name="theme-color" content="#0c0c0d">
+  <meta property="og:title" content="About — LensRift">
+  <meta property="og:description" content="Intentional lighting, organic textures, and stories in motion.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0c0d'/%3E%3Ctext x='32' y='43' font-family='system-ui' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ELR%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
-  <nav class="nav nav-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav nav-dark" aria-label="Primary">
     <div class="nav-container">
       <a href="./index.html" class="nav-logo">LensRift</a>
       <div class="nav-links">
         <a href="./index.html">Home</a>
         <a href="./portfolio.html">Portfolio</a>
-        <a href="./about.html" class="active">About</a>
+        <a href="./about.html" class="active" aria-current="page">About</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="./index.html">Home</a>
     <a href="./portfolio.html">Portfolio</a>
     <a href="./about.html">About</a>
     <a href="#contact">Contact</a>
   </div>
 
-  <div class="page-content">
+  <main id="main" class="page-content">
     <section class="hero hero-dark hero-compact">
       <div class="hero-content profile-hero-content">
         <img src="assets/images/about-2.webp" alt="Julian Vane" class="profile-avatar-img">
@@ -53,7 +64,7 @@
               <span class="skill-tag">Remote Delivery</span>
             </div>
           </div>
-          <div class="split-feature-img"><img src="assets/images/about-1.webp" alt="Highlands"></div>
+          <div class="split-feature-img"><img src="assets/images/about-1.webp" alt="Highlands" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -91,9 +102,9 @@
           <h2 class="headline-2" style="color: var(--text-light);">Field Frames</h2>
         </div>
         <div class="gallery-grid">
-          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Street Geometry" data-category="Street" data-src="assets/images/gallery-1.webp" data-description="Urban intersection study."><img src="assets/images/gallery-1.webp" alt="Street"></div>
-          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Neon Pulse" data-category="Urban Night" data-src="assets/images/gallery-2.webp" data-description="Shinjuku at twilight."><img src="assets/images/gallery-2.webp" alt="Neon"></div>
-          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Monolith" data-category="Travel" data-src="assets/images/gallery-3.webp" data-description="High-altitude solitude."><img src="assets/images/gallery-3.webp" alt="Monolith"></div>
+          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Street Geometry" data-category="Street" data-src="assets/images/gallery-1.webp" data-description="Urban intersection study."><img src="assets/images/gallery-1.webp" alt="Street" loading="lazy" decoding="async"></div>
+          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Neon Pulse" data-category="Urban Night" data-src="assets/images/gallery-2.webp" data-description="Shinjuku at twilight."><img src="assets/images/gallery-2.webp" alt="Neon" loading="lazy" decoding="async"></div>
+          <div class="gallery-item portfolio-item" data-item-type="photo" data-title="Monolith" data-category="Travel" data-src="assets/images/gallery-3.webp" data-description="High-altitude solitude."><img src="assets/images/gallery-3.webp" alt="Monolith" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -113,22 +124,22 @@
         <div class="footer-links"><a href="./index.html">Home</a><a href="./portfolio.html">Portfolio</a><a href="./about.html">About</a></div>
       </div>
     </footer>
-  </div>
+  </main>
 
-  <div id="portfolio-modal" class="modal-backdrop">
+  <div id="portfolio-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="bento-modal-title" aria-hidden="true">
     <div class="modal-content">
-      <button id="bento-modal-close" class="modal-close">&times;</button>
+      <button id="bento-modal-close" class="modal-close" aria-label="Close dialog">&times;</button>
       <div class="modal-media">
-        <img id="bento-modal-img" src="" alt="Detail View">
+        <img id="bento-modal-img" alt="" decoding="async">
         <div id="bento-modal-video-container" class="modal-video" style="display:none;">
-          <iframe id="bento-modal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <iframe id="bento-modal-iframe" title="Video player" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
       </div>
       <div class="modal-info"><p class="label" id="bento-modal-cat" style="color: var(--accent);"></p><h2 id="bento-modal-title"></h2><p id="bento-modal-desc"></p></div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="assets/js/supabase-client.js"></script>
   <script src="assets/js/media-loader.js"></script>
   <script src="assets/js/interactions.js"></script>

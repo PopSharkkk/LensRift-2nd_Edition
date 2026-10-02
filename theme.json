@@ -246,7 +246,7 @@
 			"text": "var(--wp--preset--color--muted)"
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--raleway)",
+			"fontFamily": "var(--wp--preset--font-family--poppins)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
 			"fontWeight": "300",
 			"lineHeight": "1.75"

@@ -4,32 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LensRift — Visual Storyteller</title>
+  <meta name="description" content="LensRift — cinematic documentary, landscape and aerial storytelling across Indonesia and beyond.">
+  <meta name="theme-color" content="#0c0c0d">
+  <meta property="og:title" content="LensRift — Visual Storyteller">
+  <meta property="og:description" content="Journeys captured beyond the postcard view — documentary, landscape, and human presence.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0c0d'/%3E%3Ctext x='32' y='43' font-family='system-ui' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle'%3ELR%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/hero-1.webp">
   <link rel="stylesheet" href="style.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
   <!-- Navigation (identical Apple frosted nav from WebPro quiz1) -->
-  <nav class="nav nav-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav nav-dark" aria-label="Primary">
     <div class="nav-container">
       <a href="./index.html" class="nav-logo">LensRift</a>
       <div class="nav-links">
-        <a href="./index.html" class="active">Home</a>
+        <a href="./index.html" class="active" aria-current="page">Home</a>
         <a href="./portfolio.html">Portfolio</a>
         <a href="./about.html">About</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="nav-hamburger" aria-label="Menu">
+      <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
-  <div class="nav-mobile-overlay">
+  <div class="nav-mobile-overlay" id="mobile-menu">
     <a href="./index.html">Home</a>
     <a href="./portfolio.html">Portfolio</a>
     <a href="./about.html">About</a>
     <a href="#contact">Contact</a>
   </div>
 
-  <div class="page-content">
+  <main id="main" class="page-content">
     <!-- Hero -->
     <section class="hero hero-with-bg" style="background-image: url('assets/images/hero-1.webp');">
       <div class="hero-content">
@@ -57,7 +69,7 @@
             data-item-type="photo" data-title="Tokyo's Neon Pulse" data-category="Urban & Night"
             data-src="assets/images/gallery-2.webp"
             data-description="Atmospheric rain-slicked streets of Shinjuku. Vibrant neon reflections and dynamic city motion at twilight.">
-            <div class="card-image"><img src="assets/images/gallery-2.webp" alt="Tokyo Street"></div>
+            <div class="card-image"><img src="assets/images/gallery-2.webp" alt="Tokyo Street" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <p class="label card-label" style="color: var(--accent);">Urban &amp; Night</p>
               <h3 class="card-title" style="color: var(--text-light);">Tokyo's Neon Pulse</h3>
@@ -68,7 +80,7 @@
             data-item-type="photo" data-title="Echoes of the Andean Peaks" data-category="Landscape & Mountain"
             data-src="assets/images/gallery-3.webp"
             data-description="Weathered rock formations above high-altitude desert plains. Long exposure natural light study.">
-            <div class="card-image"><img src="assets/images/gallery-3.webp" alt="Andean Rock Formation"></div>
+            <div class="card-image"><img src="assets/images/gallery-3.webp" alt="Andean Rock Formation" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <p class="label card-label" style="color: var(--text-light-secondary);">Landscape</p>
               <h3 class="card-title" style="color: var(--text-light);">Echoes of the Andean Peaks</h3>
@@ -79,7 +91,7 @@
             data-item-type="photo" data-title="Alpine Reflection Lake" data-category="Documentary & Travel"
             data-src="assets/images/about-1.webp"
             data-description="Quiet moments alongside glacial mountain waters in Sumatra, Indonesia.">
-            <div class="card-image"><img src="assets/images/about-1.webp" alt="Hiker by Mountain Lake"></div>
+            <div class="card-image"><img src="assets/images/about-1.webp" alt="Hiker by Mountain Lake" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <p class="label card-label" style="color: var(--text-light-secondary);">Documentary</p>
               <h3 class="card-title" style="color: var(--text-light);">Alpine Reflection Lake</h3>
@@ -109,7 +121,7 @@
             </div>
           </div>
           <div class="split-feature-img">
-            <img src="assets/images/about-2.webp" alt="Photographer Portrait">
+            <img src="assets/images/about-2.webp" alt="Photographer Portrait" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -124,7 +136,7 @@
         </div>
         <div class="card-grid card-grid-3" data-media-grid="videos" data-media-limit="3">
           <div class="card card-dark portfolio-item reveal" data-item-type="video" data-title="The Silent Ridge" data-category="Narrative Film" data-src="assets/images/wide-1.webp" data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1" data-description="Short narrative film across volcanic ridges of Bali & Komodo. Native 6K RAW, anamorphic lenses.">
-            <div class="card-image"><img src="assets/images/wide-1.webp" alt="Silent Ridge"><div class="card-play"><span>▶</span></div></div>
+            <div class="card-image"><img src="assets/images/wide-1.webp" alt="Silent Ridge" loading="lazy" decoding="async"><div class="card-play"><span>▶</span></div></div>
             <div class="card-body">
               <p class="label card-label" style="color: var(--accent);">Narrative Film</p>
               <h3 class="card-title" style="color: var(--text-light);">The Silent Ridge</h3>
@@ -132,7 +144,7 @@
             </div>
           </div>
           <div class="card card-dark portfolio-item reveal" data-item-type="video" data-title="Velocity Motors" data-category="Commercial" data-src="assets/images/wide-2.webp" data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1" data-description="Global launch commercial. High-speed pursuit drone, DaVinci Resolve metallic grade.">
-            <div class="card-image"><img src="assets/images/wide-2.webp" alt="Velocity Motors"><div class="card-play"><span>▶</span></div></div>
+            <div class="card-image"><img src="assets/images/wide-2.webp" alt="Velocity Motors" loading="lazy" decoding="async"><div class="card-play"><span>▶</span></div></div>
             <div class="card-body">
               <p class="label card-label" style="color: var(--text-light-secondary);">Commercial</p>
               <h3 class="card-title" style="color: var(--text-light);">Velocity Motors</h3>
@@ -140,7 +152,7 @@
             </div>
           </div>
           <div class="card card-dark portfolio-item reveal" data-item-type="video" data-title="Archipelago Flight" data-category="Aerial / Drone" data-src="assets/images/wide-3.webp" data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1" data-description="Aerial documentary across Raja Ampat and Sumba. Heavy-lifter cinema drones.">
-            <div class="card-image"><img src="assets/images/wide-3.webp" alt="Archipelago Flight"><div class="card-play"><span>▶</span></div></div>
+            <div class="card-image"><img src="assets/images/wide-3.webp" alt="Archipelago Flight" loading="lazy" decoding="async"><div class="card-play"><span>▶</span></div></div>
             <div class="card-body">
               <p class="label card-label" style="color: var(--text-light-secondary);">Aerial / Drone</p>
               <h3 class="card-title" style="color: var(--text-light);">Archipelago Flight</h3>
@@ -181,10 +193,14 @@
           <a href="mailto:info@lensrift.com">info@lensrift.com</a>
           <a href="tel:+14065550147">+1 (406) 555-0147</a>
         </div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out!');">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea rows="3" placeholder="Tell us about your project..." required></textarea>
+        <form class="contact-form" id="contact-form" novalidate>
+          <label class="visually-hidden" for="contact-name">Your name</label>
+          <input id="contact-name" name="name" type="text" placeholder="Your Name" required autocomplete="name">
+          <label class="visually-hidden" for="contact-email">Your email</label>
+          <input id="contact-email" name="email" type="email" placeholder="Your Email" required autocomplete="email">
+          <label class="visually-hidden" for="contact-message">Project details</label>
+          <textarea id="contact-message" name="message" rows="3" placeholder="Tell us about your project..." required></textarea>
+          <p class="form-status" id="form-status" role="status" hidden></p>
           <div class="hero-cta"><button type="submit" class="btn btn-primary">Contact Me</button></div>
         </form>
       </div>
@@ -200,16 +216,16 @@
         </div>
       </div>
     </footer>
-  </div>
+  </main>
 
   <!-- Modal -->
-  <div id="portfolio-modal" class="modal-backdrop">
+  <div id="portfolio-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="bento-modal-title" aria-hidden="true">
     <div class="modal-content">
-      <button id="bento-modal-close" class="modal-close">&times;</button>
+      <button id="bento-modal-close" class="modal-close" aria-label="Close dialog">&times;</button>
       <div class="modal-media">
-        <img id="bento-modal-img" src="" alt="Detail View">
+        <img id="bento-modal-img" alt="" decoding="async">
         <div id="bento-modal-video-container" class="modal-video" style="display:none;">
-          <iframe id="bento-modal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <iframe id="bento-modal-iframe" title="Video player" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
       </div>
       <div class="modal-info">
@@ -220,7 +236,7 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="assets/js/supabase-client.js"></script>
   <script src="assets/js/media-loader.js"></script>
   <script src="assets/js/interactions.js"></script>
