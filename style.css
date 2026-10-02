@@ -291,3 +291,72 @@ ul, ol { list-style: none; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .stats-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
+
+/* === Apple refinement pass: elegance, mobile, motion === */
+:root { --ease-apple: cubic-bezier(0.32, 0.72, 0, 1); }
+
+h1, h2, h3, .headline-super, .headline-1, .headline-2, .card-title { text-wrap: balance; }
+::selection { background: var(--accent); color: #fff; }
+a, button { -webkit-tap-highlight-color: transparent; }
+.stat-number { font-variant-numeric: tabular-nums; }
+
+/* Pill buttons with a light lift */
+.btn { border-radius: 999px; padding: 12px 28px; transition: transform 0.35s var(--ease-apple), box-shadow 0.35s ease, background-color var(--transition), border-color var(--transition), color var(--transition); }
+.btn-primary:hover { background: #e8e8ed; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); }
+.btn-secondary:hover { border-color: #fff; transform: translateY(-1px); }
+
+/* Hero entrance — staggered rise, one shared ease */
+@keyframes hero-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.hero-content > * { animation: hero-rise 0.9s var(--ease-apple) both; }
+.hero-content > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.24s; }
+
+/* Scroll cue */
+.scroll-cue { position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%); z-index: 2; width: 25px; height: 42px; border: 1.5px solid rgba(255, 255, 255, 0.45); border-radius: 14px; display: flex; justify-content: center; padding-top: 8px; }
+.scroll-cue span { width: 3px; height: 8px; border-radius: 2px; background: #fff; animation: cue-drop 2.2s var(--ease-apple) infinite; }
+@keyframes cue-drop { 0% { opacity: 0; transform: translateY(-4px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(12px); } }
+
+/* Staggered grid entrances */
+.card-grid .reveal:nth-child(2), .gallery-grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.card-grid .reveal:nth-child(3), .gallery-grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.card-grid .reveal:nth-child(4), .gallery-grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* Mobile menu — links cascade in along one path */
+.nav-mobile-overlay { overscroll-behavior: contain; }
+.nav-mobile-overlay a { opacity: 0; transform: translateY(14px); transition: opacity 0.45s var(--ease-apple), transform 0.45s var(--ease-apple), color var(--transition), border-color var(--transition); }
+.nav-mobile-overlay.active a { opacity: 1; transform: none; }
+.nav-mobile-overlay.active a:nth-child(2) { transition-delay: 0.06s; }
+.nav-mobile-overlay.active a:nth-child(3) { transition-delay: 0.12s; }
+.nav-mobile-overlay.active a:nth-child(4) { transition-delay: 0.18s; }
+.nav-mobile-overlay:not(.active) a { transition-delay: 0s; }
+
+/* Modal — centered card on desktop, bottom sheet on mobile */
+.modal-backdrop { transition: opacity 0.4s ease; }
+.modal-content { transform: translateY(14px) scale(0.97); transition: transform 0.5s var(--ease-apple); overscroll-behavior: contain; }
+.modal-backdrop.is-open .modal-content { transform: none; }
+@media (max-width: 640px) {
+  .modal-backdrop { padding: 24px 12px 0; align-items: flex-end; }
+  .modal-content { border-radius: 20px 20px 0 0; max-height: 92vh; transform: translateY(48px); }
+  .modal-backdrop.is-open .modal-content { transform: none; }
+  .modal-info { padding: 24px 22px; }
+}
+
+/* Small-screen polish */
+.filter-bar { max-width: 100%; }
+@media (max-width: 500px) {
+  .hero-cta .filter-bar { align-self: center; overflow-x: auto; scrollbar-width: none; }
+  .hero-cta .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-btn { white-space: nowrap; }
+  .btn { justify-content: center; }
+  .scroll-cue { display: none; }
+  .profile-avatar-img { width: 120px; height: 120px; }
+  .card-body { padding: 20px 20px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > *, .nav-mobile-overlay a { animation: none; opacity: 1; transform: none; transition: none; }
+  .scroll-cue { display: none; }
+  .btn-primary:hover, .btn-secondary:hover { transform: none; box-shadow: none; }
+  .modal-content { transform: none; transition: none; }
+}
