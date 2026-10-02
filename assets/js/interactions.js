@@ -18,15 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObs.observe(el));
   }
 
+  // ---------- Nav state: transparent over the hero photo, solid past it ----------
+  const nav = document.querySelector('.nav');
+  const hero = document.querySelector('.hero');
+  let menuOpen = false;
+  let heroVisible = !!hero;
+  const syncNav = () => {
+    if (!nav) return;
+    nav.classList.toggle('menu-open', menuOpen);
+    nav.classList.toggle('scrolled', menuOpen || !heroVisible);
+  };
+
   // ---------- Mobile nav ----------
   const hamburger = document.querySelector('.nav-hamburger');
   const overlay = document.querySelector('.nav-mobile-overlay');
   if (hamburger && overlay) {
     const setMenu = (open) => {
+      menuOpen = open;
       hamburger.classList.toggle('active', open);
       overlay.classList.toggle('active', open);
       hamburger.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
+      syncNav();
     };
     hamburger.addEventListener('click', () => setMenu(!overlay.classList.contains('active')));
     overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
@@ -35,15 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- Nav scrolled state (sentinel, no scroll events) ----------
-  const nav = document.querySelector('.nav');
-  const sentinel = document.getElementById('nav-sentinel');
-  if (nav && sentinel && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => {
-      nav.classList.toggle('scrolled', !entry.isIntersecting);
-    }).observe(sentinel);
-  } else if (nav) {
-    nav.classList.add('scrolled');
+  // Solid bar the instant the hero photo clears it (no scroll events).
+  // Pages without a full-bleed hero stay solid from the start.
+  if (nav) {
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        heroVisible = entry.isIntersecting;
+        syncNav();
+      }, { threshold: 0, rootMargin: '-64px 0px 0px 0px' }).observe(hero);
+    } else {
+      nav.classList.add('scrolled');
+    }
   }
 
   // ---------- Smooth anchors ----------
