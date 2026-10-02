@@ -1,10 +1,12 @@
-/* Apple-inspired interactions — ported from WebPro quiz1/js/main.js + LensRift modal/filter */
+/* LensRift interactions — reveal, menu, anchors, counters, filter, modal, form.
+   No scroll listeners: nav state uses an IntersectionObserver sentinel and the
+   hero drift uses an observer-gated rAF loop. transform/opacity only. */
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal');
-  if (reduceMotion) {
+  const revealEls = document.querySelectorAll('.reveal:not(.revealed)');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
     revealEls.forEach(el => el.classList.add('revealed'));
   } else {
     const revealObs = new IntersectionObserver((entries) => {
@@ -13,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => revealObs.observe(el));
   }
 
-  // Mobile nav (identical to quiz1)
+  // Mobile nav
   const hamburger = document.querySelector('.nav-hamburger');
   const overlay = document.querySelector('.nav-mobile-overlay');
   if (hamburger && overlay) {
@@ -23,50 +25,64 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
     };
-    hamburger.addEventListener('click', () => {
-      setMenu(!overlay.classList.contains('active'));
-    });
+    hamburger.addEventListener('click', () => setMenu(!overlay.classList.contains('active')));
     overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('active')) { setMenu(false); hamburger.focus(); } });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) { setMenu(false); hamburger.focus(); }
+    });
   }
 
-  // Nav scrolled state
+  // Nav scrolled state — sentinel observed instead of scroll events
   const nav = document.querySelector('.nav');
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
+  const sentinel = document.getElementById('nav-sentinel');
+  if (nav && sentinel && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      nav.classList.toggle('scrolled', !entry.isIntersecting);
+    }).observe(sentinel);
+  } else if (nav) {
+    nav.classList.add('scrolled');
   }
 
   // Smooth anchors (instant when reduced motion is requested)
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
       const id = this.getAttribute('href');
-      if (id.length < 2) return;
+      if (!id || id.length < 2) return;
       const t = document.querySelector(id);
       if (t) { e.preventDefault(); t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }); }
     });
   });
 
-  // Hero parallax — rAF-throttled so scroll stays on the compositor path
-  const heroes = document.querySelectorAll('.hero');
-  if (heroes.length && !reduceMotion) {
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const y = window.scrollY;
-      const vh = window.innerHeight;
+  // Hero drift — rAF loop that only runs while a hero is on screen
+  const heroes = Array.from(document.querySelectorAll('.hero')).map(h => ({
+    el: h, content: h.querySelector('.hero-inner'), visible: false
+  })).filter(h => h.content);
+  if (heroes.length && !reduceMotion && 'IntersectionObserver' in window) {
+    let running = false;
+    const tick = () => {
+      const vh = window.innerHeight, y = window.scrollY;
+      let anyVisible = false;
       heroes.forEach(h => {
-        const c = h.querySelector('.hero-content');
-        if (c && y < vh) {
-          c.style.opacity = Math.max(0, 1 - (y / (vh * 0.7)));
-          c.style.transform = `translateY(${y * 0.3}px)`;
+        if (!h.visible) return;
+        anyVisible = true;
+        if (y < vh * 1.2) {
+          h.content.style.opacity = Math.max(0, 1 - (y / (vh * 0.85)));
+          h.content.style.transform = `translateY(${y * 0.18}px)`;
         }
       });
+      running = anyVisible;
+      if (running) requestAnimationFrame(tick);
+      else heroes.forEach(h => { h.content.style.opacity = ''; h.content.style.transform = ''; });
     };
-    window.addEventListener('scroll', () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
+    const kick = () => { if (!running) { running = true; requestAnimationFrame(tick); } };
+    const heroObs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        const h = heroes.find(x => x.el === en.target);
+        if (h) h.visible = en.isIntersecting;
+      });
+      kick();
+    }, { threshold: 0 });
+    heroes.forEach(h => heroObs.observe(h.el));
   }
 
   // Counters
@@ -89,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     obs.observe(el);
   });
 
-  // Portfolio filter (Apple pills)
+  // Portfolio filter
   const filterBtns = document.querySelectorAll('.filter-btn');
   const videoBlock = document.querySelector('.portfolio-group-video');
   const photoBlock = document.querySelector('.portfolio-group-photo');
@@ -104,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // Portfolio modal (event delegation — works for DB-injected cards too)
+  // Lightbox (event delegation — works for DB-injected cards too)
   const modal = document.getElementById('portfolio-modal');
   const mClose = document.getElementById('bento-modal-close');
   const mImg = document.getElementById('bento-modal-img');
@@ -134,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       mVidWrap.style.display = 'none'; mImg.style.display = 'block';
       mImg.src = item.dataset.src || '';
-      mImg.alt = title || 'Photo detail view';
+      mImg.alt = title ? title + ' — full view' : 'Photo full view';
       if (mFrame) mFrame.removeAttribute('src');
     }
     lastFocus = document.activeElement;
@@ -153,17 +169,33 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
   }
 
-  // Contact form — inline status feedback instead of alert()
+  // Contact form — inline field errors + status confirmation
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   if (form && status) {
+    const fields = Array.from(form.querySelectorAll('.field'));
+    fields.forEach(f => {
+      const input = f.querySelector('input, textarea');
+      if (input) input.addEventListener('input', () => f.classList.remove('invalid'));
+    });
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      const name = document.getElementById('contact-name');
-      const greeting = name && name.value.trim() ? `Thank you, ${name.value.trim()} — ` : 'Thank you — ';
-      status.textContent = `${greeting}your message is on its way. We reply within 2 business days.`;
+      let firstBad = null;
+      fields.forEach(f => {
+        const input = f.querySelector('input, textarea');
+        if (!input) return;
+        const bad = !input.checkValidity() || !input.value.trim();
+        f.classList.toggle('invalid', bad);
+        if (bad && !firstBad) firstBad = input;
+      });
+      if (firstBad) { firstBad.focus(); return; }
+      const nameEl = document.getElementById('contact-name');
+      const name = nameEl && nameEl.value.trim() ? nameEl.value.trim().split(' ')[0] : null;
+      status.textContent = name
+        ? `Thank you, ${name} — your message is on its way. We reply within two business days.`
+        : 'Thank you — your message is on its way. We reply within two business days.';
       status.hidden = false;
+      status.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
       form.querySelectorAll('input, textarea').forEach(f => { f.value = ''; });
     });
   }

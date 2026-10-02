@@ -2,41 +2,52 @@
    Priority: 1) window.LENSRIFT_DB override (Supabase rows)  2) assets/data/media.json
    Grids opt in via: <div data-media-grid="photos|videos|featured" data-media-limit="3"> */
 (function () {
+  'use strict';
+
+  var TAG_CLASSES = ['tag-clay', 'tag-sage', 'tag-stone'];
+
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
 
-  function photoCard(p, featured) {
+  function tagClass(seed) {
+    var h = 0;
+    var str = String(seed || '');
+    for (var i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) % 997;
+    return TAG_CLASSES[h % TAG_CLASSES.length];
+  }
+
+  function photoCard(p) {
     return (
-      '<div class="card card-dark' + (featured ? ' card-featured' : '') + ' portfolio-item reveal revealed"' +
+      '<article class="card portfolio-item reveal revealed"' +
       ' data-item-type="photo" data-title="' + esc(p.title) + '"' +
       ' data-category="' + esc(p.category) + '" data-src="' + esc(p.src) + '"' +
       ' data-description="' + esc(p.description || '') + '">' +
-      '<div class="card-image"><img src="' + esc(p.src) + '" alt="' + esc(p.title) + '" loading="lazy"></div>' +
+      '<div class="card-image"><img src="' + esc(p.src) + '" alt="' + esc(p.title) + '" loading="lazy" decoding="async"></div>' +
       '<div class="card-body">' +
-      '<p class="label card-label" style="color: var(--accent);">' + esc(p.category) + '</p>' +
-      '<h3 class="card-title" style="color: var(--text-light);">' + esc(p.title) + '</h3>' +
+      '<p class="tag ' + tagClass(p.title) + '">' + esc(p.category) + '</p>' +
+      '<h3 class="card-title">' + esc(p.title) + '</h3>' +
       '<p class="card-desc">' + esc(p.description || '') + '</p>' +
-      '</div></div>'
+      '</div></article>'
     );
   }
 
   function videoCard(v) {
     return (
-      '<div class="card card-dark portfolio-item reveal revealed"' +
+      '<article class="card strip-card portfolio-item reveal revealed"' +
       ' data-item-type="video" data-title="' + esc(v.title) + '"' +
       ' data-category="' + esc(v.category) + '" data-src="' + esc(v.src) + '"' +
       ' data-video-url="' + esc(v.video_url || '') + '"' +
       ' data-description="' + esc(v.description || '') + '">' +
-      '<div class="card-image"><img src="' + esc(v.src) + '" alt="' + esc(v.title) + '" loading="lazy">' +
+      '<div class="card-image"><img src="' + esc(v.src) + '" alt="' + esc(v.title) + '" loading="lazy" decoding="async" draggable="false">' +
       '<div class="card-play"><span>\u25B6</span></div></div>' +
       '<div class="card-body">' +
-      '<p class="label card-label" style="color: var(--accent);">' + esc(v.category) + '</p>' +
-      '<h3 class="card-title" style="color: var(--text-light);">' + esc(v.title) + '</h3>' +
+      '<p class="tag ' + tagClass(v.title) + '">' + esc(v.category) + '</p>' +
+      '<h3 class="card-title">' + esc(v.title) + '</h3>' +
       '<p class="card-desc">' + esc(v.description || '') + '</p>' +
-      '</div></div>'
+      '</div></article>'
     );
   }
 
@@ -71,7 +82,7 @@
     let html = '';
     if (kind === 'photos') {
       const arr = [...(db.photos || [])].sort(byOrder);
-      html = (limit > 0 ? arr.slice(0, limit) : arr).map(p => photoCard(p, false)).join('');
+      html = (limit > 0 ? arr.slice(0, limit) : arr).map(p => photoCard(p)).join('');
     } else if (kind === 'videos') {
       const arr = [...(db.videos || [])].sort(byOrder);
       html = (limit > 0 ? arr.slice(0, limit) : arr).map(videoCard).join('');
@@ -79,8 +90,8 @@
       const feats = [...(db.photos || [])].sort(byOrder);
       const first = feats.find(p => p.is_featured) || feats[0];
       const rest = feats.filter(p => p !== first);
-      html = (first ? photoCard(first, true) : '') +
-        (limit > 0 ? rest.slice(0, limit - 1) : rest).map(p => photoCard(p, false)).join('');
+      html = (first ? photoCard(first) : '') +
+        (limit > 0 ? rest.slice(0, limit - 1) : rest).map(p => photoCard(p)).join('');
     }
     if (html) grid.innerHTML = html;
   }
@@ -91,6 +102,7 @@
     try {
       const db = await getDB();
       grids.forEach(g => { try { render(g, db); } catch (e) { console.warn('media render skipped', e); } });
+      if (window.LensRiftInitStrips) window.LensRiftInitStrips();
     } catch (e) {
       console.warn('LensRift DB not loaded, keeping hardcoded cards:', e.message);
     }

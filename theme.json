@@ -17,47 +17,47 @@
 				{
 					"name": "Base",
 					"slug": "base",
-					"color": "#0b132b"
+					"color": "#f6f4ee"
 				},
 				{
 					"name": "Surface",
 					"slug": "surface",
-					"color": "#1c2541"
+					"color": "#fffdf9"
 				},
 				{
 					"name": "Contrast",
 					"slug": "contrast",
-					"color": "#ffffff"
+					"color": "#221d15"
 				},
 				{
 					"name": "Muted",
 					"slug": "muted",
-					"color": "#8d99ae"
+					"color": "#5f584c"
 				},
 				{
 					"name": "Primary",
 					"slug": "primary",
-					"color": "#3a86ff"
+					"color": "#9a5b23"
 				},
 				{
 					"name": "Primary deep",
 					"slug": "primary-deep",
-					"color": "#2563eb"
+					"color": "#7c4a1d"
 				},
 				{
 					"name": "Accent",
 					"slug": "accent",
-					"color": "#3a86ff"
+					"color": "#9a5b23"
 				},
 				{
 					"name": "Dark",
 					"slug": "dark",
-					"color": "#050b14"
+					"color": "#221d15"
 				},
 				{
 					"name": "Divider",
 					"slug": "divider",
-					"color": "#2a3759"
+					"color": "#e3dccb"
 				},
 				{
 					"name": "Overlay",
