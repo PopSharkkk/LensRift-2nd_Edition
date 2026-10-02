@@ -351,6 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     mMedia.addEventListener('pointerdown', (e) => {
       if (isVideo || mImg.style.display === 'none') return;
+      if (e.target.closest && e.target.closest('button')) return; // let zoom/nav buttons receive their clicks
       stopPan();
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       try { mMedia.setPointerCapture(e.pointerId); } catch (err) { /* noop */ }

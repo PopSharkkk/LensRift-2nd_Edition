@@ -144,7 +144,8 @@
       dragging = true; engaged = false; moved = 0;
       startX = e.clientX; startScroll = strip.scrollLeft;
       history = [[e.clientX, performance.now()]];
-      try { strip.setPointerCapture(e.pointerId); } catch (err) { /* noop */ }
+      // No setPointerCapture here on purpose: capturing on pointer-down would
+      // retarget the follow-up click to the strip and cards could never open.
     });
 
     strip.addEventListener('pointermove', function (e) {
@@ -153,7 +154,11 @@
       var dx = e.clientX - startX;
       moved = Math.max(moved, Math.abs(dx));
       if (!engaged && Math.abs(dx) < 10) return; // hysteresis before committing
-      if (!engaged) { engaged = true; strip.classList.add('is-dragging'); }
+      if (!engaged) {
+        engaged = true;
+        strip.classList.add('is-dragging');
+        try { strip.setPointerCapture(e.pointerId); } catch (err) { /* noop */ }
+      }
       var now = performance.now();
       history.push([e.clientX, now]);
       if (history.length > 6) history.shift();
@@ -193,6 +198,9 @@
     }
     strip.addEventListener('pointerup', endDrag);
     strip.addEventListener('pointercancel', endDrag);
+    // Release can land off-strip when no capture is held yet; harmless no-op otherwise.
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
   }
 
   function initAll() {
