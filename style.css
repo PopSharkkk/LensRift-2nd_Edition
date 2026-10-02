@@ -59,7 +59,7 @@ body {
   font-weight: 450;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 a { color: inherit; text-decoration: none; }
 a, button { -webkit-tap-highlight-color: transparent; }
@@ -504,7 +504,7 @@ main { display: block; }
 }
 
 /* ============ Photo mosaic (mixed aspects, 2-col editorial) ============ */
-.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; position: relative; z-index: 1; }
 .photo-grid .card-image.ar-wide { aspect-ratio: 16 / 9; }
 .photo-grid .card-image.ar-square { aspect-ratio: 1 / 1; }
 
@@ -512,17 +512,6 @@ main { display: block; }
 .hero-bg img { animation: kenburns 12s ease-in-out infinite alternate; }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.08); } }
 .hero:hover .hero-bg img { animation-play-state: paused; }
-
-/* ============ Pinned section head (photo archive) ============ */
-.section-head.pin {
-  position: sticky;
-  top: calc(var(--nav-h) + 12px);
-  z-index: 5;
-  background: var(--canvas);
-  padding: 14px 0 18px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 40px;
-}
 
 /* ============ Lightbox viewer chrome ============ */
 .modal-media { position: relative; touch-action: none; cursor: grab; }
@@ -570,7 +559,6 @@ main { display: block; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-inner > * { animation: none; }
   .hero-bg img { animation: none; }
-  .section-head.pin { position: static; }
   .scroll-cue, .scroll-cue span { display: none; }
   .card:hover, .card:hover .card-image img, .gallery-item:hover img,
   .card:hover .card-play span, .btn:active, .strip-btn:active,
