@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var TAG_CLASSES = ['tag-clay', 'tag-sage', 'tag-stone'];
+  var TAG_CLASSES = ['tag-peach', 'tag-sage', 'tag-sky'];
 
   function esc(s) {
     return String(s == null ? '' : s)

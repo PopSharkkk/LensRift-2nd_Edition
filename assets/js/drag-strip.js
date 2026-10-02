@@ -199,8 +199,8 @@
     document.querySelectorAll('[data-drag-strip]').forEach(initStrip);
   }
 
-  // Media-loader re-renders grids after fetch; it calls this hook when done.
-  window.LensRiftInitStrips = initAll;
+  // Shared with interactions.js (lightbox pan/zoom momentum).
+  window.LensRiftSpring = { springTo: springTo, rubberband: rubberband, project: project, clamp: clamp };
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);
   } else {

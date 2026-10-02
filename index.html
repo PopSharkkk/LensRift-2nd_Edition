@@ -9,9 +9,11 @@
   <meta property="og:title" content="LensRift — Visual Storyteller">
   <meta property="og:description" content="Journeys captured beyond the postcard view — documentary, landscape, and human presence.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lensrift.vercel.app/assets/images/hero-1.webp">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1280">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23221d15'/%3E%3Ctext x='32' y='42' font-family='Georgia' font-size='28' fill='%23f6f4ee' text-anchor='middle'%3ELR%3C/text%3E%3C/svg%3E">
   <link rel="preload" as="font" href="assets/fonts/playfair-display-latin-wght-normal.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="assets/fonts/raleway-latin-wght-normal.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/images/hero-1.webp">
   <link rel="stylesheet" href="style.css">
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
@@ -42,7 +44,7 @@
 
   <main id="main">
     <section class="hero">
-      <div class="hero-bg" aria-hidden="true"><img src="assets/images/hero-1.webp" alt="" fetchpriority="high" decoding="async"></div>
+      <div class="hero-bg" aria-hidden="true"><img src="assets/images/hero-1.webp" alt="" fetchpriority="high" decoding="async" width="1920" height="1280"></div>
       <div class="container hero-inner">
         <span class="eyebrow">Visual Storyteller</span>
         <h1 class="display hero-title">The World, Unfiltered</h1>
@@ -62,26 +64,26 @@
           <p class="lede">Three frames that set the tone — neon cities, high desert, and still water.</p>
         </div>
         <div class="bento-trio reveal-group" data-media-grid="featured" data-media-limit="3">
-          <article class="card portfolio-item reveal" data-item-type="photo" data-title="Tokyo's Neon Pulse" data-category="Urban &amp; Night" data-src="assets/images/gallery-2.webp" data-description="Atmospheric rain-slicked streets of Shinjuku. Vibrant neon reflections and dynamic city motion at twilight.">
-            <div class="card-image"><img src="assets/images/gallery-2.webp" alt="Rain-slicked Shinjuku street at night with neon reflections" loading="lazy" decoding="async"></div>
+          <article class="card portfolio-item reveal" data-parallax="0.9" data-item-type="photo" data-title="Tokyo's Neon Pulse" data-category="Urban &amp; Night" data-src="assets/images/gallery-2.webp" data-description="Atmospheric rain-slicked streets of Shinjuku. Vibrant neon reflections and dynamic city motion at twilight.">
+            <div class="card-image" data-scrub><img src="assets/images/gallery-2.webp" alt="Rain-slicked Shinjuku street at night with neon reflections" loading="lazy" decoding="async" width="1000" height="1000"></div>
             <div class="card-body">
-              <p class="tag tag-clay">Urban &amp; Night</p>
+              <p class="tag tag-peach">Urban &amp; Night</p>
               <h3 class="card-title">Tokyo's Neon Pulse</h3>
               <p class="card-desc">Rain-slicked Shinjuku streets, neon reflections, and city motion at twilight.</p>
             </div>
           </article>
-          <article class="card portfolio-item reveal" data-item-type="photo" data-title="Echoes of the Andean Peaks" data-category="Landscape &amp; Mountain" data-src="assets/images/gallery-3.webp" data-description="Weathered rock formations above high-altitude desert plains. Long exposure natural light study.">
-            <div class="card-image"><img src="assets/images/gallery-3.webp" alt="Weathered rock monolith above desert plains" loading="lazy" decoding="async"></div>
+          <article class="card portfolio-item reveal" data-parallax="1.0" data-item-type="photo" data-title="Echoes of the Andean Peaks" data-category="Landscape &amp; Mountain" data-src="assets/images/gallery-3.webp" data-description="Weathered rock formations above high-altitude desert plains. Long exposure natural light study.">
+            <div class="card-image" data-scrub><img src="assets/images/gallery-3.webp" alt="Weathered rock monolith above desert plains" loading="lazy" decoding="async" width="1000" height="1000"></div>
             <div class="card-body">
               <p class="tag tag-sage">Landscape</p>
               <h3 class="card-title">Echoes of the Andean Peaks</h3>
               <p class="card-desc">High-altitude desert plains and weathered monoliths in natural light.</p>
             </div>
           </article>
-          <article class="card portfolio-item reveal" data-item-type="photo" data-title="Alpine Reflection Lake" data-category="Documentary &amp; Travel" data-src="assets/images/about-1.webp" data-description="Quiet moments alongside glacial mountain waters in Sumatra, Indonesia.">
-            <div class="card-image"><img src="assets/images/about-1.webp" alt="Lone hiker beside a still mountain lake" loading="lazy" decoding="async"></div>
+          <article class="card portfolio-item reveal" data-parallax="1.1" data-item-type="photo" data-title="Alpine Reflection Lake" data-category="Documentary &amp; Travel" data-src="assets/images/about-1.webp" data-description="Quiet moments alongside glacial mountain waters in Sumatra, Indonesia.">
+            <div class="card-image" data-scrub><img src="assets/images/about-1.webp" alt="Lone hiker beside a still mountain lake" loading="lazy" decoding="async" width="600" height="845"></div>
             <div class="card-body">
-              <p class="tag tag-stone">Documentary</p>
+              <p class="tag tag-sky">Documentary</p>
               <h3 class="card-title">Alpine Reflection Lake</h3>
               <p class="card-desc">Glacial waters and solitude in the Sumatran highlands.</p>
             </div>
@@ -104,8 +106,8 @@
               <a href="./portfolio.html" class="btn btn-ghost">View Portfolio</a>
             </div>
           </div>
-          <figure class="split-figure reveal">
-            <img src="assets/images/about-2.webp" alt="Portrait of the photographer at work in the field" loading="lazy" decoding="async">
+          <figure class="split-figure reveal" data-scrub>
+            <img src="assets/images/about-2.webp" alt="Portrait of the photographer at work in the field" loading="lazy" decoding="async" width="600" height="845">
           </figure>
         </div>
       </div>
@@ -124,15 +126,15 @@
       <div class="container strip-wrap">
         <div class="strip reveal" data-drag-strip data-media-grid="videos" data-media-limit="3" tabindex="0" role="region" aria-label="Cinematic video projects, draggable filmstrip">
           <article class="card strip-card portfolio-item" data-item-type="video" data-title="The Silent Ridge" data-category="Narrative Film" data-src="assets/images/wide-1.webp" data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1" data-description="Short narrative film across volcanic ridges of Bali &amp; Komodo. Native 6K RAW, anamorphic lenses.">
-            <div class="card-image"><img src="assets/images/wide-1.webp" alt="Volcanic ridge fading into haze" loading="lazy" decoding="async" draggable="false"><div class="card-play"><span>▶</span></div></div>
+            <div class="card-image" data-scrub><img src="assets/images/wide-1.webp" alt="Volcanic ridge fading into haze" loading="lazy" decoding="async" draggable="false" width="1920" height="939"><div class="card-play"><span>▶</span></div></div>
             <div class="card-body">
-              <p class="tag tag-clay">Narrative Film</p>
+              <p class="tag tag-peach">Narrative Film</p>
               <h3 class="card-title">The Silent Ridge</h3>
               <p class="card-desc">Short film — Bali &amp; Komodo, 6K RAW.</p>
             </div>
           </article>
           <article class="card strip-card portfolio-item" data-item-type="video" data-title="Velocity Motors" data-category="Commercial" data-src="assets/images/wide-2.webp" data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1" data-description="Global launch commercial. High-speed pursuit drone, DaVinci Resolve metallic grade.">
-            <div class="card-image"><img src="assets/images/wide-2.webp" alt="Sports car shot from a pursuit drone" loading="lazy" decoding="async" draggable="false"><div class="card-play"><span>▶</span></div></div>
+            <div class="card-image" data-scrub><img src="assets/images/wide-2.webp" alt="Sports car shot from a pursuit drone" loading="lazy" decoding="async" draggable="false" width="1920" height="939"><div class="card-play"><span>▶</span></div></div>
             <div class="card-body">
               <p class="tag tag-sage">Commercial</p>
               <h3 class="card-title">Velocity Motors</h3>
@@ -140,9 +142,9 @@
             </div>
           </article>
           <article class="card strip-card portfolio-item" data-item-type="video" data-title="Archipelago Flight" data-category="Aerial / Drone" data-src="assets/images/wide-3.webp" data-video-url="https://www.youtube.com/embed/kmvObXDxKRA?autoplay=1" data-description="Aerial documentary across Raja Ampat and Sumba. Heavy-lifter cinema drones.">
-            <div class="card-image"><img src="assets/images/wide-3.webp" alt="Aerial view over scattered tropical islands" loading="lazy" decoding="async" draggable="false"><div class="card-play"><span>▶</span></div></div>
+            <div class="card-image" data-scrub><img src="assets/images/wide-3.webp" alt="Aerial view over scattered tropical islands" loading="lazy" decoding="async" draggable="false" width="1920" height="939"><div class="card-play"><span>▶</span></div></div>
             <div class="card-body">
-              <p class="tag tag-stone">Aerial / Drone</p>
+              <p class="tag tag-sky">Aerial / Drone</p>
               <h3 class="card-title">Archipelago Flight</h3>
               <p class="card-desc">6K aerial exploration across Indonesia.</p>
             </div>
@@ -244,16 +246,24 @@
   <div id="portfolio-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="bento-modal-title" aria-hidden="true">
     <div class="modal-content">
       <button id="bento-modal-close" class="modal-close" aria-label="Close dialog">×</button>
-      <div class="modal-media">
+      <div class="modal-media" id="bento-modal-media">
         <img id="bento-modal-img" alt="" decoding="async">
         <div id="bento-modal-video-container" class="modal-video" style="display:none;">
           <iframe id="bento-modal-iframe" title="Video player" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
+        <div class="lb-bar" role="toolbar" aria-label="Image viewer controls">
+          <button class="lb-btn" id="lb-zoom-out" aria-label="Zoom out">−</button>
+          <button class="lb-btn" id="lb-zoom-reset" aria-label="Reset zoom">Reset</button>
+          <button class="lb-btn" id="lb-zoom-in" aria-label="Zoom in">+</button>
+        </div>
+        <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous item">‹</button>
+        <button class="lb-nav lb-next" id="lb-next" aria-label="Next item">›</button>
       </div>
       <div class="modal-info">
-        <p class="tag tag-clay" id="bento-modal-cat"></p>
+        <p class="tag tag-peach" id="bento-modal-cat"></p>
         <h2 id="bento-modal-title"></h2>
         <p id="bento-modal-desc"></p>
+        <p class="modal-foot"><span id="bento-modal-count" aria-live="polite"></span><a href="#contact" id="modal-contact">Commission something like this →</a></p>
       </div>
     </div>
   </div>

@@ -9,9 +9,11 @@
   <meta property="og:title" content="About — LensRift">
   <meta property="og:description" content="Intentional lighting, organic textures, and stories in motion.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lensrift.vercel.app/assets/images/about-2.webp">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="845">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23221d15'/%3E%3Ctext x='32' y='42' font-family='Georgia' font-size='28' fill='%23f6f4ee' text-anchor='middle'%3ELR%3C/text%3E%3C/svg%3E">
   <link rel="preload" as="font" href="assets/fonts/playfair-display-latin-wght-normal.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="assets/fonts/raleway-latin-wght-normal.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -43,7 +45,7 @@
     <section class="page-hero">
       <div class="container hero-inner">
         <div class="profile-head">
-          <img src="assets/images/about-2.webp" alt="Portrait of Julian Vane" class="avatar" decoding="async">
+          <img src="assets/images/about-2.webp" alt="Portrait of Julian Vane" class="avatar" decoding="async" width="600" height="845">
           <div>
             <span class="eyebrow">Visual Director &amp; Cinematographer</span>
             <h1 class="display" style="margin:16px 0 14px;">Julian Vane</h1>
@@ -62,13 +64,13 @@
             <h2 class="h2">Intentional Lighting &amp; Organic Textures</h2>
             <p class="lede">Beauty doesn't require staging. We blend rich equatorial color with subtle filmic grading — deliberate pacing, tactile sound, respect for the story.</p>
             <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;">
-              <span class="tag tag-stone">6K / 8K RAW</span>
+              <span class="tag tag-sky">6K / 8K RAW</span>
               <span class="tag tag-sage">Certified Drone Pilots</span>
-              <span class="tag tag-clay">Remote Delivery</span>
+              <span class="tag tag-peach">Remote Delivery</span>
             </div>
           </div>
-          <figure class="split-figure reveal">
-            <img src="assets/images/about-1.webp" alt="Highland shelter beside still water" loading="lazy" decoding="async">
+          <figure class="split-figure reveal" data-scrub>
+            <img src="assets/images/about-1.webp" alt="Highland shelter beside still water" loading="lazy" decoding="async" width="600" height="845">
           </figure>
         </div>
       </div>
@@ -111,14 +113,14 @@
           <h2 class="h2">Field Frames</h2>
         </div>
         <div class="gallery-grid reveal-group">
-          <button class="gallery-item portfolio-item reveal" data-item-type="photo" data-title="Street Geometry" data-category="Street" data-src="assets/images/gallery-1.webp" data-description="Urban intersection study.">
-            <img src="assets/images/gallery-1.webp" alt="Top-down view of a city intersection" loading="lazy" decoding="async">
+          <button class="gallery-item portfolio-item reveal" data-scrub data-item-type="photo" data-title="Street Geometry" data-category="Street" data-src="assets/images/gallery-1.webp" data-description="Urban intersection study.">
+            <img src="assets/images/gallery-1.webp" alt="Top-down view of a city intersection" loading="lazy" decoding="async" width="1000" height="1000">
           </button>
-          <button class="gallery-item portfolio-item reveal" data-item-type="photo" data-title="Neon Pulse" data-category="Urban Night" data-src="assets/images/gallery-2.webp" data-description="Shinjuku at twilight.">
-            <img src="assets/images/gallery-2.webp" alt="Neon-lit Tokyo street in the rain" loading="lazy" decoding="async">
+          <button class="gallery-item portfolio-item reveal" data-scrub data-item-type="photo" data-title="Neon Pulse" data-category="Urban Night" data-src="assets/images/gallery-2.webp" data-description="Shinjuku at twilight.">
+            <img src="assets/images/gallery-2.webp" alt="Neon-lit Tokyo street in the rain" loading="lazy" decoding="async" width="1000" height="1000">
           </button>
-          <button class="gallery-item portfolio-item reveal" data-item-type="photo" data-title="Monolith" data-category="Travel" data-src="assets/images/gallery-3.webp" data-description="High-altitude solitude.">
-            <img src="assets/images/gallery-3.webp" alt="Lone rock pinnacle in high desert" loading="lazy" decoding="async">
+          <button class="gallery-item portfolio-item reveal" data-scrub data-item-type="photo" data-title="Monolith" data-category="Travel" data-src="assets/images/gallery-3.webp" data-description="High-altitude solitude.">
+            <img src="assets/images/gallery-3.webp" alt="Lone rock pinnacle in high desert" loading="lazy" decoding="async" width="1000" height="1000">
           </button>
         </div>
       </div>
@@ -174,16 +176,24 @@
   <div id="portfolio-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="bento-modal-title" aria-hidden="true">
     <div class="modal-content">
       <button id="bento-modal-close" class="modal-close" aria-label="Close dialog">×</button>
-      <div class="modal-media">
+      <div class="modal-media" id="bento-modal-media">
         <img id="bento-modal-img" alt="" decoding="async">
         <div id="bento-modal-video-container" class="modal-video" style="display:none;">
           <iframe id="bento-modal-iframe" title="Video player" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
+        <div class="lb-bar" role="toolbar" aria-label="Image viewer controls">
+          <button class="lb-btn" id="lb-zoom-out" aria-label="Zoom out">−</button>
+          <button class="lb-btn" id="lb-zoom-reset" aria-label="Reset zoom">Reset</button>
+          <button class="lb-btn" id="lb-zoom-in" aria-label="Zoom in">+</button>
+        </div>
+        <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous item">‹</button>
+        <button class="lb-nav lb-next" id="lb-next" aria-label="Next item">›</button>
       </div>
       <div class="modal-info">
-        <p class="tag tag-clay" id="bento-modal-cat"></p>
+        <p class="tag tag-peach" id="bento-modal-cat"></p>
         <h2 id="bento-modal-title"></h2>
         <p id="bento-modal-desc"></p>
+        <p class="modal-foot"><span id="bento-modal-count" aria-live="polite"></span><a href="#contact" id="modal-contact">Commission something like this →</a></p>
       </div>
     </div>
   </div>

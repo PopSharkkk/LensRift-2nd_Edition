@@ -17,7 +17,7 @@
 				{
 					"name": "Base",
 					"slug": "base",
-					"color": "#f6f4ee"
+					"color": "#faf7f2"
 				},
 				{
 					"name": "Surface",
@@ -27,37 +27,37 @@
 				{
 					"name": "Contrast",
 					"slug": "contrast",
-					"color": "#221d15"
+					"color": "#1e1b16"
 				},
 				{
 					"name": "Muted",
 					"slug": "muted",
-					"color": "#5f584c"
+					"color": "#57503f"
 				},
 				{
 					"name": "Primary",
 					"slug": "primary",
-					"color": "#9a5b23"
+					"color": "#8a4b1f"
 				},
 				{
 					"name": "Primary deep",
 					"slug": "primary-deep",
-					"color": "#7c4a1d"
+					"color": "#6e3a14"
 				},
 				{
 					"name": "Accent",
 					"slug": "accent",
-					"color": "#9a5b23"
+					"color": "#8a4b1f"
 				},
 				{
 					"name": "Dark",
 					"slug": "dark",
-					"color": "#221d15"
+					"color": "#1e1b16"
 				},
 				{
 					"name": "Divider",
 					"slug": "divider",
-					"color": "#e3dccb"
+					"color": "#e5dcc9"
 				},
 				{
 					"name": "Overlay",
