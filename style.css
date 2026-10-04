@@ -305,7 +305,7 @@ body.has-hero .nav.menu-open .nav-hamburger span { background: var(--ink); }
 }
 .strip::-webkit-scrollbar { display: none; }
 .strip.is-dragging { cursor: grabbing; scroll-snap-type: none; }
-.strip-card { flex: 0 0 min(460px, 82vw); scroll-snap-align: start; }
+.strip > .card { flex: 0 0 min(460px, 82vw); scroll-snap-align: start; }
 .strip-nav { display: flex; gap: 10px; margin-top: 26px; }
 .strip-btn {
   width: 46px; height: 46px; border-radius: 50%;

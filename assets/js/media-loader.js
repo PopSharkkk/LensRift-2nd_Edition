@@ -36,7 +36,7 @@
 
   function videoCard(v) {
     return (
-      '<article class="card strip-card portfolio-item reveal revealed"' +
+      '<article class="card portfolio-item reveal revealed"' +
       ' data-item-type="video" data-title="' + esc(v.title) + '"' +
       ' data-category="' + esc(v.category) + '" data-src="' + esc(v.src) + '"' +
       ' data-video-url="' + esc(v.video_url || '') + '"' +
